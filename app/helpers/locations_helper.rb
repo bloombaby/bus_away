@@ -1,7 +1,7 @@
 module LocationsHelper
   # Parse the API data and store it so we can work with it
   def fetch_buses_from_api(source_url)
-    http = Nett::HTTP.get_response(URI.parse(source_url))
+    http = Net::HTTP.get_response(URI.parse(source_url))
     data = http.body
     JSON.parse(data)
   end
